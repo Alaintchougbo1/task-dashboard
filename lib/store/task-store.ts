@@ -58,7 +58,6 @@ export interface TaskItemProps {
   avatar: string; // URL de l'image
 }
 
-
 interface TaskStore {
   tasks: Task[];
   addTask: (task: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => void;
@@ -123,7 +122,7 @@ export const useTaskStore = create<TaskStore>()(
   persist(
     (set, get) => ({
       tasks: initialTasks,
-      
+
       addTask: (taskData) => {
         const newTask: Task = {
           ...taskData,
@@ -133,7 +132,7 @@ export const useTaskStore = create<TaskStore>()(
         };
         set((state) => ({ tasks: [...state.tasks, newTask] }));
       },
-      
+
       updateTask: (id, taskData) => {
         set((state) => ({
           tasks: state.tasks.map((task) =>
@@ -143,17 +142,17 @@ export const useTaskStore = create<TaskStore>()(
           ),
         }));
       },
-      
+
       deleteTask: (id) => {
         set((state) => ({
           tasks: state.tasks.filter((task) => task.id !== id),
         }));
       },
-      
+
       getTaskById: (id) => {
         return get().tasks.find((task) => task.id === id);
       },
-      
+
       getTasksByStatus: (status) => {
         return get().tasks.filter((task) => task.status === status);
       },

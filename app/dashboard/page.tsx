@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useTaskStore, TaskStatus } from "@/lib/store/task-store";
-import { TaskCard } from "@/components/tasks/task-card";
-import { CheckCircle, Clock, ListTodo, TrendingUp } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useTaskStore, TaskStatus } from '@/lib/store/task-store';
+import { TaskCard } from '@/components/tasks/task-card';
+import { CheckCircle, Clock, ListTodo, TrendingUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -124,7 +124,7 @@ export default function DashboardPage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Tâches récentes</h2>
           <button
-            onClick={() => router.push("/dashboard/tasks")}
+            onClick={() => router.push('/dashboard/tasks')}
             className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
           >
             Voir tout →
@@ -143,7 +143,7 @@ export default function DashboardPage() {
               Commencez par créer votre première tâche
             </p>
             <button
-              onClick={() => router.push("/dashboard/tasks")}
+              onClick={() => router.push('/dashboard/tasks')}
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
             >
               Créer une tâche

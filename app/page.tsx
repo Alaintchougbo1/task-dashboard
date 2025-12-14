@@ -15,7 +15,8 @@ export default function HomePage() {
             Task Dashboard
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Gérez vos tâches efficacement avec une interface moderne et intuitive
+            Gérez vos tâches efficacement avec une interface moderne et
+            intuitive
           </p>
           <Button size="lg" onClick={() => router.push('/dashboard')}>
             Commencer maintenant
@@ -30,7 +31,7 @@ export default function HomePage() {
               Créez et organisez vos tâches par statut et priorité
             </p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <TrendingUp className="h-12 w-12 text-green-600 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Suivi en temps réel</h3>
@@ -38,7 +39,7 @@ export default function HomePage() {
               Visualisez votre progression avec des statistiques claires
             </p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <Users className="h-12 w-12 text-purple-600 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Interface moderne</h3>

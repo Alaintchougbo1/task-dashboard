@@ -38,7 +38,10 @@ export function TaskForm({ defaultValues, onSubmit, onCancel }: TaskFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="title"
+          className="block text-sm font-medium text-gray-700 mb-1"
+        >
           Titre <span className="text-red-500">*</span>
         </label>
         <input
@@ -53,7 +56,10 @@ export function TaskForm({ defaultValues, onSubmit, onCancel }: TaskFormProps) {
       </div>
 
       <div>
-        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="description"
+          className="block text-sm font-medium text-gray-700 mb-1"
+        >
           Description
         </label>
         <textarea
@@ -67,7 +73,10 @@ export function TaskForm({ defaultValues, onSubmit, onCancel }: TaskFormProps) {
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="status"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Statut
           </label>
           <select
@@ -82,7 +91,10 @@ export function TaskForm({ defaultValues, onSubmit, onCancel }: TaskFormProps) {
         </div>
 
         <div>
-          <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="priority"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Priorité
           </label>
           <select
@@ -98,7 +110,10 @@ export function TaskForm({ defaultValues, onSubmit, onCancel }: TaskFormProps) {
       </div>
 
       <div>
-        <label htmlFor="dueDate" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="dueDate"
+          className="block text-sm font-medium text-gray-700 mb-1"
+        >
           Date d'échéance
         </label>
         <input
