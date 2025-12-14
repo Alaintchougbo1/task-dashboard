@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { TaskStatus, TaskPriority } from '@/task-dashboard/lib/store/task-store';
+import { TaskStatus, TaskPriority } from '@/lib/store/task-store';
 
 const taskSchema = z.object({
   title: z.string().min(1, 'Le titre est requis').max(100),
