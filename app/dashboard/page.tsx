@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useTaskStore, TaskStatus } from '@/lib/store/task-store';
-import { TaskCard } from '@/components/tasks/task-card';
-import { CheckCircle, Clock, ListTodo, TrendingUp } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useTaskStore, TaskStatus } from "@/lib/store/task-store";
+import { TaskCard } from "@/components/tasks/task-card";
+import { CheckCircle, Clock, ListTodo, TrendingUp } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -11,14 +11,13 @@ export default function DashboardPage() {
 
   const stats = {
     total: tasks.length,
-    completed: tasks.filter(t => t.status === TaskStatus.DONE).length,
-    inProgress: tasks.filter(t => t.status === TaskStatus.IN_PROGRESS).length,
-    todo: tasks.filter(t => t.status === TaskStatus.TODO).length,
+    completed: tasks.filter((t) => t.status === TaskStatus.DONE).length,
+    inProgress: tasks.filter((t) => t.status === TaskStatus.IN_PROGRESS).length,
+    todo: tasks.filter((t) => t.status === TaskStatus.TODO).length,
   };
 
-  const completionRate = stats.total > 0 
-    ? Math.round((stats.completed / stats.total) * 100) 
-    : 0;
+  const completionRate =
+    stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
 
   const recentTasks = tasks.slice(0, 5);
 
@@ -27,7 +26,7 @@ export default function DashboardPage() {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold mb-2">Tableau de bord</h1>
-        <p className="text-gray-600">Vue d'ensemble de vos tâches</p>
+        <p className="text-gray-600">Vue d&apos;ensemble de vos tâches</p>
       </div>
 
       {/* Stats Cards */}
@@ -107,7 +106,7 @@ export default function DashboardPage() {
             </span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-            <div 
+            <div
               className="bg-linear-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${completionRate}%` }}
             />
@@ -124,14 +123,14 @@ export default function DashboardPage() {
       <div>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Tâches récentes</h2>
-          <button 
-            onClick={() => router.push('/dashboard/tasks')}
+          <button
+            onClick={() => router.push("/dashboard/tasks")}
             className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
           >
             Voir tout →
           </button>
         </div>
-        
+
         {recentTasks.length === 0 ? (
           <div className="bg-white rounded-xl p-12 text-center border border-gray-200">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
@@ -144,7 +143,7 @@ export default function DashboardPage() {
               Commencez par créer votre première tâche
             </p>
             <button
-              onClick={() => router.push('/dashboard/tasks')}
+              onClick={() => router.push("/dashboard/tasks")}
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
             >
               Créer une tâche
@@ -152,7 +151,7 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="space-y-3">
-            {recentTasks.map(task => (
+            {recentTasks.map((task) => (
               <TaskCard
                 key={task.id}
                 task={task}

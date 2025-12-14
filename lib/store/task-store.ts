@@ -28,10 +28,6 @@ export interface NavigationProps {
   onNavigate: () => void;
 }
 
-interface BackNavigationProps {
-  onBack: () => void;
-}
-
 export interface FeatureProps {
   icon: React.ReactNode;
   color: string;
